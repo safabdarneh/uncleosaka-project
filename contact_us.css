@@ -1,0 +1,91 @@
+/* top */
+header{display: flex;
+    width: 100%;
+    height: 30%;
+    background-color: #999;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    color: white;
+}
+header img{
+    display: block;
+    width: 60px;
+position: absolute;
+top:3%;
+}
+.conlogoheader{position: absolute;
+right: 45%;}
+.grid{
+display: grid;
+grid-template-columns: 1fr 1fr;/* מחלק את MAIN והוא החלק האמצעי שני עמודות באןתן גודל */
+gap: 20px; /*הרוחב בין העמודותהימנית והששמלית*/
+align-items: start;/*מתחילים לכתוב מהתחלת העממוד*/
+
+}
+.conrainer{margin: 20px;}/* כדי שנתרחק קצת מקצי העמוד*/
+/* left */
+.but{ /*שלושת הכפתורים insta tewter youtube*/
+    display: flex;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+}
+.contacts{
+display: flex;
+gap: 10px; /*הרוחב בין הכפתורים */
+}
+.but img{
+width: 50px;/*גודל התמונות של הכפתורים*/
+}
+
+/* right */
+p{margin-top: auto;}/*כדי שהמלבן יהיה צמוד ל LABEL*/
+.s,.ss,button{/*כדי שיהיו המלבנים כום באותו גודל*/
+     display: flex;
+    width:80%;
+    height:30px;   
+}
+.ss{height: 60px;}/*המלבן של ה MESSAGEיהיה רחב יותר*/
+/*כפתור SEND*/
+button{
+background-color: #999;
+display: flex;
+justify-content: center;
+align-items: center;
+border-radius: 2px;
+}
+::placeholder{/*המילה המופיעה בתוך המלבן */
+    font-size: small;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+/* footer */
+footer{
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-top: auto;
+}
+footer img{width: 20px;
+}
+
+.footerspace{
+    width: 100%;
+    display: flex;
+justify-content:space-between;
+margin-inline-start: 10%;
+margin-inline-end: 10%;
+margin-top: auto;}
+.logo{width: 50px;}
+
+.succmsg{
+    color: green;
+    font-size: 15px;
+    margin-top: 10px;
+}
+.erroe{color: red;
+font-size: 12px;}

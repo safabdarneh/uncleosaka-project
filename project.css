@@ -1,0 +1,185 @@
+.page1{
+width:100vw ;
+height:100vh ;
+position: relative;
+color:white;
+overflow: hidden;
+display: flex;/*התמונה תקח גודל המסך כולו*/
+}
+/* הגדרת תמונה כרקע*/
+.photo{position: relative;}
+.photo img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-bottom-right-radius:50px ;
+    border-bottom-left-radius:50px;
+object-fit: cover;/*התמונה תכסה גודל המסך*/
+}
+
+.center, .text{
+   height: 100%;
+   width: 100%;/* כדח שהFLEX יעבוד צריך להגדיר האורך והרוחב של העמוד*/
+    position: absolute;
+   display: flex;
+   flex-direction: column;/*סדר באופן אנכי*/
+   justify-content: center;/*אמצע שורה*/
+   align-items: center;/*אמצע עמודה*/
+color: rgb(108, 15, 15);
+z-index: 2;/*כדי שכתיב יופיע מעל התמונה*/
+}
+.center{font-size:30px;}/*הגדלת כתיב יד*/
+.cent-mar{margin: 10px; /* שיהיו יותר קרובים*/}
+
+/* כפתור */
+.but1{
+background-color: red;
+color: white;
+padding: 10px 40px;
+border-radius: 40px;
+border: none;/*njhe, vdcuku,*/
+}
+
+/* עמוד 2 */
+
+.page{
+width:100vw ;
+height:100vh ;
+}
+.centerofthepage{
+    display: flex;
+    width: 100%;
+    flex-direction: column;/*אמצע שורה*/
+    align-items: center;
+
+}
+.but2{
+    margin-top: 10%;
+
+}
+
+
+
+/* gallery */
+.gallery{
+width: 100%;
+max-width: 400px;
+height: auto; /*אורך הTRACKלפי אורך התמונה*/
+overflow: hidden;/*יותר מ400PX זה יתעלם*/
+}
+/* / */
+ .view{
+display: block;
+overflow: hidden;
+height: 250px; /*אורך התמונות*/
+}
+.track{
+display: flex;
+height: 100%;
+width: calc((100%/3)*5);
+animation: slide 5s linear infinite;
+will-change: transform;
+margin-top: 10%;
+
+
+
+}
+.track img{
+    width: calc(100%/3);
+    object-fit: cover;
+    display: block;
+}
+ 
+@keyframes slide{
+from{transform: translateX(0);}
+ to{transform:translateX(-100%)}
+}
+.view :hover.track{
+    animation-play-state: paused;
+}
+
+ 
+ .page{
+display: flex;
+width: 100vw;
+height: 100vh;
+ }
+ 
+ .ourstoryphoto {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;/*המרחב בין שמאל לימין*/
+    margin: 10%;
+    align-items: center;
+
+ }
+ /* התמונות */
+.pho{
+display: grid;
+grid-template-columns: 1fr 1fr;
+grid-template-rows: 1fr 1fr;
+
+gap: 30px 10px; /*מהרווח בן התמונות*/
+
+
+}
+.pho img{
+display: flex;
+width: 100%; 
+height: 100%;
+justify-content: center;
+align-items: center;
+display: block;
+
+}
+
+.phflex{
+display: flex;
+height: 100%;
+/* border: 4px solid red; */
+border-radius: 20px;
+object-fit: cover;
+align-items: center;
+justify-content: center;
+overflow: hidden;
+}
+
+.Special_Times{
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 30px 10px;
+margin-top: 15%;
+
+}
+
+.Special_Times img {
+display: flex;
+width: 100%; 
+height: 100%;
+justify-content: center;
+align-items: center;
+display: block;
+
+}
+.kv{color: red;}
+/* footer */
+footer{
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-top: auto;
+}
+footer img{width: 20px;
+    margin-top: 30%;
+    margin-bottom: 30%;
+}
+
+.footerspace{
+    width: 100%;
+    display: flex;
+justify-content:space-between;
+margin-inline-start: 10%;
+margin-inline-end: 10%;
+margin-top: auto;}
+
+.logo{width: 50px;}

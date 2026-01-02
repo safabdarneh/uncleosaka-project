@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <head><title>drinks</title>
+    <link rel="stylesheet" href="d.css">
+
+</head>
+<body>
+
+<header>
+<a href="project.html"> <img src="imges/logo.png" class="headerlogo" ></a>
+<div class="toppage">
+ <a href="project.html"> <h4>home</h4></a>
+  <a href="Selectyourchoice.html"><h4>menu</h4></a>
+  <a href="contact_us.html"> <h4>contact</h4> </a>
+
+</div>
+</header>
+
+
+
+<div class="menu">
+    <section>
+    <h1>choose your drink</h1>
+    <!--*************** cards -->
+    <div class="drinks">
+    <button class="card" data-name="coldcoffee" data-price="0$" type="button">
+    <img src="imges/img2.png" alt="coldcoffee">
+        <div class="cardtext">
+            <span>coldcoffee</span> 
+        </div>
+</button>
+<button class="card" data-name="hotcoffee" data-price="0$" type="button">
+<img src="imges/hotcoffee.jpeg" alt="hotcoffee">
+        <div class="cardtext">
+            <span>hotcoffee</span> 
+        </div>
+</button>
+<button class="card" data-name="smoothies-bubbles" data-price="0$" type="button">
+<img src="imges/smoothies-bubbles.png" alt="smoothies-bubbles">
+        <div class="cardtext">
+            <span>smoothies-bubbles</span> 
+        </div>
+</button>
+<button class="card" data-name="milkshake" data-price="0$" type="button">
+<img src="imges/milkskake.png" alt="milkshake">
+        <div class="cardtext">
+            <span>milkshake</span> 
+        </div>
+</button>
+<button class="card" data-name="mojito" data-price="0$" type="button">
+<img src="imges/mojito.png" alt="mojito">
+        <div class="cardtext">
+            <span>mojito</span> 
+        </div>
+</button>  
+<button class="card" data-name="power moktails" data-price="0$" type="button">
+<img src="imges/power moktails.jpeg" alt="power moktails"  >
+      <div class="cardtext">
+            <span>power-moktails</span> 
+        </div>
+</button>
+    </div><!-- div drinks  -->
+   
+   <!-- the choice -->
+   
+   
+    <div class="thechoice">
+            <h1>the choice</h1>
+
+ <div class="row">      
+<div>
+<div class="label"> drink name</div>
+<div id="selectedname" class="value">________</div>
+</div>
+<div>
+<div class="label"> price</div>
+<div id="selectedprice" class="value">________</div>
+</div>
+<div>
+<label class="label" for="qty">amount</label>
+<input type="number" id="qty" min="1" value="1">
+</div>
+ </div><!-- row -->
+
+ <div class="size">
+     <!-- <div class="size"> -->
+    <div class="label">size</div>
+    <label class="radio"><input type="radio" class="sizeoption"  name="drinksize" data-name="small" data-price="5$">size small-- 5$!</label>
+    <label class="radio"><input type="radio" class="sizeoption"  name="drinksize" data-name="medium" data-price="8$">size medium --8$!</label>
+    <label class="radio"><input type="radio" class="sizeoption"  name="drinksize" data-name="large" data-price="11$">size large --11$!</label>
+ </div>
+
+<div class="addons">
+<div class="label">addons</div>
+<label class="checkbox"><input type="checkbox" class="addon" data-name="Extra shot" data-price="0.5$">Extra shot (+0.5$)</label>
+<label class="checkbox"><input type="checkbox" class="addon" data-name="Soy milk" data-price="1$">Soy milk (+1$)</label>
+<label class="checkbox"><input type="checkbox" class="addon" data-name="Caramel" data-price="0.8$">Caramel (+0.8$)</label>
+</div>
+
+<button id="addtocart" class="primary">add to cart</button>
+<p id="warn" class="warn"hidden> choose drink first !!</p>
+
+
+    </div><!-- thechoise -->
+
+    </section>
+
+
+
+    <!-- cart -->
+
+
+
+    <aside class="cart">
+    <h2>cart</h2>
+    <ul id="cartList" class="cartList"></ul>
+    <div class="totalbox">
+        <div class="label">total price</div>
+        <div id="total" class="total">0$</div>
+    </div>
+    <button id="clearcart" class="secondary">delete all</button>
+    <a href="cartpage.html"><button id="donebtn" class="primary">Done</button></a>
+
+    </aside>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div> <!--div menu  -->
+            <script src="d.js" defer></script>
+
+</body>
+</html>
+

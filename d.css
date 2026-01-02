@@ -1,0 +1,130 @@
+
+
+body{margin: 0;
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+background: #f6f6f7;
+color: #111;
+}
+/* header */
+.headerlogo{
+width: 10%;
+display: flex;
+position: absolute;
+transform: translateX(100px) ;
+display: block;
+}
+
+.toppage{
+    
+    display: flex;
+    justify-content: center;
+    gap:10%;
+    margin-top: 5%;  /* כל ההידר יתרחק מהקצה העליון */
+    font-size: large;
+    margin-bottom: 5%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: oblique ;
+    
+
+
+} 
+a{ text-decoration:none;    color: gray;}
+
+/* menu */
+
+
+
+.card{background-color: rgb(162, 45, 45);
+    border-radius: 20px;
+    padding: 10px;
+    cursor: pointer;
+    text-align: right;
+    border-color: red;
+}
+.card img{width: 100%;
+height: 140px;
+object-fit: cover;
+display: block;
+
+}
+.cardtext{
+    display: flex;
+    width: 1005;
+justify-content: center;
+
+}
+.card.selected{border-color: blueviolet;}
+
+/* the choice */
+.thechoice{
+
+background-color: white;
+margin-top: 10%;
+border-radius: 20px;
+padding: 14px;
+
+}
+.row{display: grid;
+grid-template-columns: 1fr 1fr 120px;
+gap: 10px;
+align-items: end;
+
+}
+.label{
+    color:gray;
+    font-size: 20px;   
+
+}
+.value{font-weight: 700;}
+#qty{width: 30%;
+padding: 10px;
+border-radius: 10px;
+border: 1px solid #ddd;
+
+}
+
+.size,.addons{
+margin: 10px ;
+
+}
+.checkbox,.radio{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.primary,.secondary{
+
+width: 100%;
+padding: 10px;
+border-radius: 20px;
+border: none;
+cursor: pointer;
+font-weight: 700;
+margin-top: 1px;
+
+}
+
+.primary{
+    background-color:#b42318;
+    color: white;
+}
+
+.secondary{background-color: #eee;}
+.warn{color:b42318;
+/* margin: 10px 0 0 ; */
+}
+
+.cart{background-color: white;
+border-radius: 20px;
+padding: 15px;
+position: sticky;
+top: 12px;
+
+}
+.totalbox{
+    padding: 10px;
+}
+
+
+
+

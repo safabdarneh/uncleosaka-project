@@ -1,0 +1,84 @@
+@media (max-width:820px) {
+    .container{grid-template-columns: 1fr;}
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /*שכל הכרכים יהיו על אותו קו*/
+    padding: 20px; 
+    color: darkred;
+    background-color:rgb(204, 97, 97);
+    border-radius: 10px;
+    font-size: larger;
+}
+.container{
+
+max-width: 1000px;
+margin: 20px auto;
+display: grid;
+grid-template-columns: 2fr 1fr;/*מאפשר לחלק השני להיות לידו*/
+gap: 20px;
+
+}
+
+.backtomenu{
+border-radius: 10px;
+padding: 10%;
+background-color:darkred;
+border: none;
+color: white;
+padding: 15px 10px;
+font-size: medium;
+}
+header,.backtomenu ,.cart,.summary{font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+font-weight: 700;
+}
+
+
+.cart,.contact_us,.summary{background-color: rgb(204, 97, 97);
+padding: 20px;
+margin: 20px 0;
+border-radius: 10px;
+color: white;
+
+}
+.items{display: flex;
+flex-direction: column;
+gap: 10px;
+}
+
+
+
+.buttonclear,.buttoncheckout{display: flex;}
+
+.deletebtn{
+    background-color: red;
+    margin-left: 20px;
+    border: none;
+    border-radius: 50%;
+    width: auto;
+    height: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+}
+
+.title{
+    color: black;
+    font-size: medium;
+    font-weight: bold;
+}
+
+
+.summary{
+background-color:  darkred;
+height: fit-content;
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
+.buttonclear,.buttoncheckout{background-color:rgb(204, 97, 97);
+color: white;
+border: none;
+border-radius: 10px;}
