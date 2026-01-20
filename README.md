@@ -14,4 +14,6 @@ This project is a full-stack web application for ordering drinks online.
 Make sure Node.js is installed, then run:
 ```bash
 npm install
- 
+```bash
+node app.js
+ http://localhost:8080
