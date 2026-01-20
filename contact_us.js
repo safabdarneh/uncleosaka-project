@@ -1,3 +1,4 @@
+
 const form = document.getElementById("contactform");
 
 const nameinput = document.getElementById("name");
@@ -11,7 +12,6 @@ const phoneerror = document.getElementById("phoneerror");
 const msgerror = document.getElementById("messageerror");
 
 const successmsg = document.getElementById("succmsg");
-
 function seterror(el, msg) {//פונקציה שיופיע לנו הערה שקיים טעות 
   el.textContent = msg;
 }
@@ -29,8 +29,8 @@ function isvalidphone(phone) {
 function validate() {
   let ok = true;
 
-  if (nameinput.value.trim().length < 2) {
-    seterror(nameerror, "Name must be at least 2 characters.");
+  if (nameinput.value.trim().length < 1) {
+    seterror(nameerror, "Name must be at least 1 characters.");
     ok = false;
   } else clearerror(nameerror);
 
@@ -44,10 +44,7 @@ function validate() {
     ok = false;
   } else clearerror(phoneerror);
 
-  if (msginput.value.trim().length < 5) {
-    seterror(msgerror, "Message must be at least 5 characters.");
-    ok = false;
-  } else clearerror(msgerror);
+  clearerror(msgerror);//שדה לא חובה
 
   return ok;
 }
@@ -62,13 +59,16 @@ for (let i = 0; i < inputs.length; i++) {
   });
 }
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
+form.addEventListener("submit", async (e) => {
+  //E מכיל מידע על משקורה עכשיו
 
-  successmsg.style.display = "none";
-  if (!validate()) return;
-//שמירת הנתונים
-  const dataofcustomer = {
+  e.preventDefault();//עצירת התנהגות רגילה שקורת אחרי לחיצה על SUBMIT והיא הסרת נתונים
+
+  successmsg.style.display = "none";//הסרת הודעת הצלחה מוקדמת
+  if (!validate()) return;//כאשר יש לנו ביעה באחד השלבים עוצרים ויוצאים מהפונקציה עוזרת כדי לא לשמור מידע לא תקין
+//שמירת הנתונים בלי רווחים כוללת תאריך
+ 
+    const dataofcustomer = {
     nameofcustomer: nameinput.value.trim(),
     emailofcustomer: emailinput.value.trim(),
     phoneofcustomer: phoneinput.value.trim(),
@@ -76,8 +76,32 @@ form.addEventListener("submit", (e) => {
     createdatofcustomer: new Date().toISOString()
   };
 
-  localStorage.setItem("lastcontactmessage", JSON.stringify(dataofcustomer));
- window.location.href="project.html";//אם כל משהכנסנו נכון נעבור לדף הבית
-  form.reset();
-  successmsg.style.display = "block";
+  try {
+    const resp = await fetch("/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(dataofcustomer)
+    });
+     
+    console.log("STATUS:", resp.status);
+      const txt = await resp.text();
+      console.log("RESPONSE:", txt);
+
+
+    if (!resp.ok) throw new Error("Server error: " + resp.status);
+
+    // אם הצליח - ממשיכים כרגיל
+    localStorage.setItem("lastcontactmessage", JSON.stringify(dataofcustomer));
+    successmsg.style.display = "block";
+    form.reset();
+
+    setTimeout(() => {
+      window.location.href = "project.html";
+    }, 1500);
+
+  } catch (err) {
+    console.error(err);
+    alert("❌ Failed to send contact details to server.");
+  }
+
 });

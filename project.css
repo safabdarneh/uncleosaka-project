@@ -9,22 +9,22 @@ display: flex;/*התמונה תקח גודל המסך כולו*/
 /* הגדרת תמונה כרקע*/
 .photo{position: relative;}
 .photo img{
-    display: block;
-    width: 100%;
-    height: 100%;
-    border-bottom-right-radius:50px ;
-    border-bottom-left-radius:50px;
+display: block;
+width: 100%;
+height: 100%;
+border-bottom-right-radius:50px ;
+border-bottom-left-radius:50px;
 object-fit: cover;/*התמונה תכסה גודל המסך*/
 }
 
 .center, .text{
-   height: 100%;
-   width: 100%;/* כדח שהFLEX יעבוד צריך להגדיר האורך והרוחב של העמוד*/
-    position: absolute;
-   display: flex;
-   flex-direction: column;/*סדר באופן אנכי*/
-   justify-content: center;/*אמצע שורה*/
-   align-items: center;/*אמצע עמודה*/
+height: 100%;
+width: 100%;/* כדח שהFLEX יעבוד צריך להגדיר האורך והרוחב של העמוד*/
+position: absolute;
+display: flex;
+flex-direction: column;/*סדר באופן אנכי*/
+justify-content: center;/*אמצע שורה*/
+align-items: center;/*אמצע עמודה*/
 color: rgb(108, 15, 15);
 z-index: 2;/*כדי שכתיב יופיע מעל התמונה*/
 }
@@ -46,15 +46,23 @@ border: none;/*njhe, vdcuku,*/
 width:100vw ;
 height:100vh ;
 }
+.page2{
+display: flex;
+justify-content: center;
+}
+
+
+
+
 .centerofthepage{
-    display: flex;
-    width: 100%;
-    flex-direction: column;/*אמצע שורה*/
-    align-items: center;
+display: flex;
+width: 100%;
+flex-direction: column;/*אמצע שורה*/
+align-items: center;
 
 }
 .but2{
-    margin-top: 10%;
+margin-top: 10%;
 
 }
 
@@ -68,58 +76,54 @@ height: auto; /*אורך הTRACKלפי אורך התמונה*/
 overflow: hidden;/*יותר מ400PX זה יתעלם*/
 }
 /* / */
- .view{
+.view{
 display: block;
 overflow: hidden;
 height: 250px; /*אורך התמונות*/
 }
-.track{
+
+.track {
 display: flex;
+width:  calc((180%/3)*5);      /* מתאים אוטומטית למספר התמונות */
+animation: slide 9s linear infinite;
 height: 100%;
-width: calc((100%/3)*5);
-animation: slide 5s linear infinite;
-will-change: transform;
-margin-top: 10%;
-
-
+margin-top: 5%;
 
 }
+
+
+
 .track img{
-    width: calc(100%/3);
-    object-fit: cover;
-    display: block;
+width: calc(100%/3);
+object-fit: cover;
+display: block;
 }
- 
+
 @keyframes slide{
 from{transform: translateX(0);}
- to{transform:translateX(-100%)}
+to{transform:translateX(-50%)}
 }
-.view :hover.track{
-    animation-play-state: paused;
+.view:hover .track {
+animation-play-state: paused;
 }
 
- 
- .page{
-display: flex;
-width: 100vw;
-height: 100vh;
- }
- 
- .ourstoryphoto {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;/*המרחב בין שמאל לימין*/
-    margin: 10%;
-    align-items: center;
 
- }
- /* התמונות */
+
+
+.ourstoryphoto {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 20px;
+width: 40%;
+margin: 80px auto;  
+
+}
+/* התמונות */
 .pho{
 display: grid;
 grid-template-columns: 1fr 1fr;
 grid-template-rows: 1fr 1fr;
-
-gap: 30px 10px; /*מהרווח בן התמונות*/
+gap: 10px 10px; /*מהרווח בן התמונות*/
 
 
 }
@@ -130,6 +134,7 @@ height: 100%;
 justify-content: center;
 align-items: center;
 display: block;
+size: 50%;
 
 }
 
@@ -149,7 +154,8 @@ display: grid;
 grid-template-columns: 1fr 1fr;
 gap: 30px 10px;
 margin-top: 15%;
-
+width: 40%;
+margin: 80px auto;
 }
 
 .Special_Times img {
@@ -164,22 +170,33 @@ display: block;
 .kv{color: red;}
 /* footer */
 footer{
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    margin-top: auto;
+height: 100%;
+display: flex;
+flex-direction: row;
+    margin-top: 10%;
+margin-bottom: -100%;
 }
 footer img{width: 20px;
-    margin-top: 30%;
-    margin-bottom: 30%;
+margin-top: 30%;
+margin-bottom: 30%;
 }
 
 .footerspace{
-    width: 100%;
-    display: flex;
+width: 100%;
+display: flex;
 justify-content:space-between;
 margin-inline-start: 10%;
 margin-inline-end: 10%;
 margin-top: auto;}
 
 .logo{width: 50px;}
+
+
+*{ box-sizing: border-box; }
+
+body{
+margin: 0;
+font-family: Arial, sans-serif;
+}
+
+

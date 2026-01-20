@@ -30,16 +30,7 @@ const selectedname = document.getElementById("selectedname");//נשמור את �
   });
 }
 
-//כדי שנראה איזה משקה בחרנו
-for (let i = 0; i < cards.length; i++) {
-  cards[i].addEventListener("click", function () {
 
-    for (let j = 0; j < cards.length; j++) cards[j].classList.remove("selected");
-    cards[i].classList.add("selected");
-
-    selectdrink(cards[i]);
-  });
-}
 
 //************************************ the choice */
 
@@ -110,11 +101,14 @@ const totalel = document.getElementById("total");
 const clearbtn = document.getElementById("clearcart");
 
 let cart = []; // האלימנטים בסלסלה 
-// تحميل السلة من التخزين (مرة وحدة عند فتح الصفحة)
-const saved = localStorage.getItem("cart");
-if (saved) {
-  cart = JSON.parse(saved);
+function saveCart() {
+localStorage.setItem("cart", JSON.stringify(cart));
 }
+
+
+const saved = localStorage.getItem("cart");
+
+
 
 
 function rendertotal() {
@@ -122,6 +116,35 @@ function rendertotal() {
   for (let i = 0; i < cart.length; i++) sum += cart[i].linetotal;
   totalel.textContent = numberToMoney(sum);
 }
+
+
+
+
+function renderCartList() {
+  cartlist.innerHTML = "";
+  for (let i = 0; i < cart.length; i++) {
+    const item = cart[i];
+    const addonsText = item.addons && item.addons.length? item.addons.join(" + "): "WITHOUT ADDONS";
+    const li = document.createElement("li");
+    li.textContent = `${item.drinkname} / ${item.sizename} / ADDONS: ${addonsText} x${item.qty} = ${numberToMoney(item.linetotal)}`;
+    cartlist.appendChild(li);
+  }
+  rendertotal();
+}
+
+if (saved) {
+  cart = JSON.parse(saved);
+  renderCartList();
+} else {
+  rendertotal();
+}
+
+
+
+
+
+
+
 
 function resetchoices() {//פונקצעה שמוחקת משנבחר
   // מחיקת המשקה
@@ -174,7 +197,7 @@ addbtn.addEventListener("click", function () {
   const item = {
     drinkname: drinkname,
     sizename: selectedsize.name,
-    addons: [...selectedaddons],
+    addons: [...selectedaddons],//...עוזרת לנו להעתיק שורתה התוספות כמו
     qty: qty,
     unitprice: finalprice, // מחיר המשקה הגודל והתוספות
     linetotal: linetotal
@@ -184,12 +207,6 @@ addbtn.addEventListener("click", function () {
   saveCart();
 // שמירת הערכית בתוך הסלסלה
 
-function saveCart() {
-  localStorage.setItem("cart", JSON.stringify(cart));
-}
-
-
-  // ******************************הצגה ב CART
 
  
 
@@ -207,15 +224,16 @@ function saveCart() {
 clearbtn.addEventListener("click", function () {
   cart = [];
   cartlist.innerHTML = "";
+  saveCart();
   rendertotal();
 });
 //**********************addbtu
-const donebtn = document.getElementById("doneBtn");
+const donebtn = document.getElementById("donebtn");//********תיקון */
 
 donebtn.addEventListener("click", function () {
-  // خزّني السلة بالـ localStorage عشان صفحة الملخص تقراها
+  // שמירת הנתונים מהסלסלה לתוך ה LOCALSTORAGE-המחסן שלנו
   localStorage.setItem("cart", JSON.stringify(cart));
-  // המידע בסלסלה יועבר לעמוד הבא של הSUMMARY 
+  // המידע בסלסלה יועבר לעמוד הבא של הSUMMARY לכן אין צורך לשימוש a בhtml button
   window.location.href = "cartpage.html";
 });
 

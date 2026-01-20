@@ -18,13 +18,13 @@
             <div class="left">
                 <h2>you can find us at</h2>
                 <h3>EMAIL</h3>
-                <a href="info@uncleosaka.com">info@uncleosaka.com</a>
+                <a href="mailto:info@uncleosaka.com">info@uncleosaka.com</a>
                 <h3>PHONE NUMBER</h3>
                 <P> 0526261518</P>
                 <div class="contacts">
-<div><button class="but"><img src="imges/Screenshot 2025-12-25 094117.png" ></button></div>
-<div><button class="but"><img src="imges/Screenshot 2025-12-25 094207.png" ></button></div>
-<div><button class="but"><img src="imges/Screenshot 2025-12-25 094237.png" ></button></div>
+<div><a href="https://www.instagram.com/uncle.osaka/"><button class="but"><img src="imges/Screenshot 2025-12-25 094117.png" ></button></a></div>
+<div><a href="https://x.com/UncleOsaka_SA/status/1836713767788286054"><button class="but"><img src="imges/Screenshot 2025-12-25 094207.png" ></button></a></div>
+<div><a href="https://www.youtube.com/channel/UCepQGPh2Uce0ByKkTZKMpMQ"><button class="but"><img src="imges/Screenshot 2025-12-25 094237.png" ></button></a></div>
 
 
                 </div><!-- contacts -->
@@ -37,23 +37,23 @@
              
             <div class="right">
              <h2>let's get in touch</h2>  
-             <form class="form" id="contactform" >    
+                <form id="contactform" action="/contact" method="POST">
             <label>name
-              <p>  <input type="text" placeholder="name" id="name"class="s" ></p>
+              <p>  <input type="text" placeholder="name" name="name" id="name"class="s" ></p>
               <small class="error" id="nameerror"></small>
             </label>        
             <label>Email
-               <p> <input type="text" placeholder="email" id="email" class="s"></p>
+               <p> <input type="text" placeholder="email" name="email" id="email" class="s"></p>
                 <small class="error" id="emailerror"></small>
 
             </label>        
             <label>Phone number
-              <p>  <input type="text" placeholder="Phone number" id="phonenumber" class="s"> </p>
+              <p>  <input type="text" placeholder="Phone number" id="phonenumber" name="phone"  class="s"> </p>
                  <small class="error" id="phoneerror"></small>
 
             </label>        
             <label>message
-               <p> <textarea class="ss" placeholder="message" id="message"></textarea> </p> 
+               <p> <textarea class="ss" placeholder="message" id="message" name="message"></textarea> </p> 
                <small class="error" id="messageerror"></small>
             </label> 
             <p><button class="s" type="submit">send</button></p>
@@ -74,12 +74,12 @@
     <footer>
         <div class="footerspace">
 <div>
-    <img src="imges/Screenshot 2025-12-25 160734 INSTAFOOTER.png" alt="instagram">
-    <img src="imges/Screenshot 2025-12-25 160831 FACEBOOK FOOTER.png" alt="facebook">
+  <a href="https://www.instagram.com/uncle.osaka/">  <img src="imges/Screenshot 2025-12-25 160734 INSTAFOOTER.png" alt="instagram"></a>
+   <a href="https://www.facebook.com/UncleOsakaJerusalem/"> <img src="imges/Screenshot 2025-12-25 160831 FACEBOOK FOOTER.png" alt="facebook"></a>
 </div>  
 <div ><a href="project.html"><img src="imges/logo.png" alt="logo" class="logo"></a></div>
 
-<div ><h6>Uncle Osaka © 2022  | Powered by Safa</h6></div>
+<div ><h6>Uncle Osaka © 2025  | Powered by Safa</h6></div>
  </div>
 </footer>
 
@@ -98,7 +98,7 @@
 
 
 
-<script src="contact_us.js"></script>
+<script src="contact_us.js" defer></script>
 
 </body>
 </html>

@@ -82,3 +82,35 @@ gap: 10px;
 color: white;
 border: none;
 border-radius: 10px;}
+
+
+/* footer */
+footer{
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+      margin-top: 10%;
+    margin-bottom: -100%;
+}
+footer img{width: 20px;
+}
+
+.footerspace{
+    width: 100%;
+    display: flex;
+justify-content:space-between;
+margin-inline-start: 10%;
+margin-inline-end: 10%;
+margin-top: auto;}
+.logo{width: 50px;}
+
+.succmsg{
+    color: green;
+    font-size: 15px;
+    margin-top: 10px;
+}
+.erroe{color: red;
+font-size: 12px;}
+body{margin: 5%;}
+
+.hidden { display: none; }
